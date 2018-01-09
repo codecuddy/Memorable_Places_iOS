@@ -8,12 +8,24 @@
 
 import UIKit
 
-class PlacesViewController: UITableViewController {
+var places = [Dictionary<String, String>()]
 
+class PlacesViewController: UITableViewController {
+   
+    @IBOutlet var table: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if places.count == 1 && places[0].count == 0 {
+            
+            places.remove(at: 0)
+            
+            places.append(["name":"Memorial Stadium-Lincoln, NE","lat":"40.8206151","lon":"-96.7056432"])
+        }
        
+        table.reloadData()  
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +42,7 @@ class PlacesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 4
+        return places.count
     }
 
 
@@ -38,7 +50,10 @@ class PlacesViewController: UITableViewController {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell")
 
-        cell.textLabel?.text = "Row \(indexPath.row)"
+        if places[indexPath.row]["name"] != nil {
+         
+            cell.textLabel?.text = places[indexPath.row]["name"]
+        }
 
         return cell
     }
