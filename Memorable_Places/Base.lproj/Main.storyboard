@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Map View Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,12 +23,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1290" y="29"/>
+            <point key="canvasLocation" x="1401" y="29"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Favorite Places-->
         <scene sceneID="lXw-ZF-Zr2">
             <objects>
-                <tableViewController id="n3s-9L-4su" sceneMemberID="viewController">
+                <tableViewController id="n3s-9L-4su" customClass="PlacesViewController" customModule="Memorable_Places" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zgU-cw-RJJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,10 +48,10 @@
                             <outlet property="delegate" destination="n3s-9L-4su" id="hB4-aA-j4t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="moY-MI-TKN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="cWP-mM-u0Q">
+                    <navigationItem key="navigationItem" title="Favorite Places" id="moY-MI-TKN" userLabel="Favorite Places">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cWP-mM-u0Q">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="BXa-yx-Tau"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="BXa-yx-Tau"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -74,7 +74,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i2D-5M-80x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-53" y="31"/>
+            <point key="canvasLocation" x="-114" y="29"/>
         </scene>
     </scenes>
 </document>
