@@ -9,6 +9,7 @@
 import UIKit
 
 var places = [Dictionary<String, String>()]
+var activePlace = -1
 
 class PlacesViewController: UITableViewController {
    
@@ -16,16 +17,20 @@ class PlacesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         if places.count == 1 && places[0].count == 0 {
             
             places.remove(at: 0)
             
             places.append(["name":"Memorial Stadium-Lincoln, NE","lat":"40.8206151","lon":"-96.7056432"])
         }
-       
-        table.reloadData()  
         
+        activePlace = -1
+        
+        table.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +64,8 @@ class PlacesViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        activePlace = indexPath.row
         
         performSegue(withIdentifier: "toMap", sender: nil)
     }

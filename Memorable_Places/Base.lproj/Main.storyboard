@@ -17,13 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EO0-rw-fWu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="zp4-OW-fOF"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EO0-rw-fWu" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1Q7-z4-oBe"/>
+                            <constraint firstItem="EO0-rw-fWu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3j2-al-xaQ"/>
+                            <constraint firstItem="EO0-rw-fWu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cqf-IY-h3T"/>
+                            <constraint firstItem="EO0-rw-fWu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zwJ-x6-Ypt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="EO0-rw-fWu" id="q1N-3C-mjU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="29"/>
+            <point key="canvasLocation" x="1400.8" y="28.335832083958024"/>
         </scene>
         <!--Favorite Places-->
         <scene sceneID="lXw-ZF-Zr2">
