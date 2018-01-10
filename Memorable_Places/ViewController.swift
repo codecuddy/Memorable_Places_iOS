@@ -64,7 +64,23 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     @objc func longpress(gestureRecognizer: UIGestureRecognizer) {
         
-        print("long presssssss!")
+        if gestureRecognizer.state == UIGestureRecognizerState.began {
+        
+            let touchPoint = gestureRecognizer.location(in: self.map)
+            
+            let newCoordinate = self.map.convert(touchPoint, toCoordinateFrom: self.map)
+            
+            print(newCoordinate)
+            
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = newCoordinate
+            
+            annotation.title = "Title Goes Here"
+            
+            self.map.addAnnotation(annotation)
+        
+        }
         
     }
     
