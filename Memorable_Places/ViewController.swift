@@ -125,10 +125,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
                 
                 self.map.addAnnotation(annotation)
                 
-                places.append(["name":title,"lat":String(newCoordinate.latitude),"lon":String(newCoordinate.longitude)])
+            places.append(["name":title,"lat":String(newCoordinate.latitude),"lon":String(newCoordinate.longitude)])
                 
-                print(places)
-                
+                UserDefaults.standard.set(places, forKey: "places")
+
             })
         
         }
