@@ -15,7 +15,14 @@ class ViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longpress(gestureRecognizer:)))
+        
+        uilpgr.minimumPressDuration = 2
+        
+        map.addGestureRecognizer(uilpgr)
+        
         if activePlace != -1 {
+            
             //Get place details to display on map
             
             if places.count > activePlace {
@@ -54,7 +61,13 @@ class ViewController: UIViewController, MKMapViewDelegate {
             }
         }
     }
-
+    
+    @objc func longpress(gestureRecognizer: UIGestureRecognizer) {
+        
+        print("long presssssss!")
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
